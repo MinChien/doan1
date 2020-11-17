@@ -41,14 +41,20 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
-        ],
-        'mailgun' => [
-            'domain' => 'sandboxa5e32def93104afb8446cd4f3274ec04.mailgun.org',
-            'secret' => 'your-mailgun-key', 
+            'timeout' => null,
+            'auth_mode' => null,
         ],
 
         'ses' => [
             'transport' => 'ses',
+        ],
+
+        'mailgun' => [
+            'transport' => 'mailgun',
+        ],
+
+        'postmark' => [
+            'transport' => 'postmark',
         ],
 
         'sendmail' => [
@@ -78,8 +84,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'trinhminhminhchienchien@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'multichoice'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
     /*
