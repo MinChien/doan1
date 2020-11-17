@@ -17,7 +17,7 @@ class CreateHistoryTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('testexam_id');
-            $table->json('choose')->nullable();
+            $table->text('choose')->nullable();
             $table->integer('mark')->nullable();
             $table->timestamps();
         });

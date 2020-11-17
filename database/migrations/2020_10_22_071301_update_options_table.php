@@ -15,7 +15,7 @@ class UpdateOptionsTable extends Migration
     {
         //
         Schema::table('options', function (Blueprint $table) {
-        $table->json('name')->change();
+        $table->text('name')->change();
         $table->longText('answer');
         });
     }
