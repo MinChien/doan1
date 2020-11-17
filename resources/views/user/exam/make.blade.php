@@ -9,8 +9,9 @@
   	</div>	
   	<div class="card-body">
 		<form action="{{ url('/exam/create_history', $testexam->id) }}" method="POST">
-			@csrf	
-		    @foreach($questions as $key => $question)
+			@csrf
+			@if(count($questions) > 0)	
+		    @foreach($questions->random(5) as $key => $question)
 		    	<div class="row">
 		    		<div class="col-12">
 		    			<div class="form-group">
@@ -32,6 +33,7 @@
 				    </div>	
 				</div>    	
 		    @endforeach
+		    @endif
 		    @if(count($questions) > 0)
 		    <div class="text-center"><button type="submit" class="btn btn-outline-warning" name="complete">Nộp bài</button></div>
 		    @else

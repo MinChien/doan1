@@ -39,7 +39,7 @@ class ExamController extends Controller
 
     public function make(Request $request,$id){
         $testexam = TestExam::findOrFail($id);
-        $questions = $testexam->question->random(5);     
+        $questions = $testexam->question;     
         return view('user.exam.make', ['testexam'=> $testexam, 'questions' => $questions, 'request' => $request]);
     }
 
