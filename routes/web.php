@@ -42,7 +42,7 @@ Route::post('/logout', 'Auth\LoginController@userLogout')->name('logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin','namespace' => 'admin'], function(){
-	Route::get('/login','AdminLogincontroller@login')->name('admin.login');
+	Route::get('/login','AdminLoginController@login')->name('admin.login');
 	Route::post('/login','AdminLoginController@postlogin');	
 	Route::get('/logout','AdminLoginController@logout')->name('admin.logout');
 	Route::get('/','AdminController@index')->name('admin.index');
