@@ -17,7 +17,9 @@ Route::get('/', function () {
     return view('welcome1');
 });
 //User route
-
+Auth::routes();
+Route::post('/logout', 'Auth\LoginController@userLogout')->name('logout');
+Route::get('/home', 'HomeController@index')->name('home');
 // route profile
 Route::group(['prefix' => 'profile', 'namespace' => 'user'], function(){
 	Route::get('/', 'ProfileUserController@index')->name('user.profile');
@@ -36,10 +38,6 @@ Route::group(['prefix' => 'exam', 'namespace' => 'user'], function(){
 	Route::get('/result/detail/{id}', 'ExamController@result_detail');
 });
 
-
-Auth::routes();
-Route::post('/logout', 'Auth\LoginController@userLogout')->name('logout');
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin','namespace' => 'admin'], function(){
 	Route::get('/login','AdminLoginController@login')->name('admin.login');

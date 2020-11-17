@@ -21,7 +21,8 @@
                     <div class="container-fluid">
                     	<div class="row">
                     		<div class="col-6">
-                    			<img src="/storage/avatar-admin/{{ empty($admin->avatar) ? 'no_image.jpg' : $admin->avatar }}" class="img-thumbnail" width="30%" auto>
+                    			<!-- <img src="/storage/avatar-admin/{{ empty($admin->avatar) ? 'no_image.jpg' : $admin->avatar }}" class="img-thumbnail" width="30%" auto> -->
+                    			<img src = "{{ secure_asset('/storage/avatar-admin', empty($admin->avatar) ? 'no_image.jpg' : $admin->avatar) }}" class="img-thumbnail" width="30%" auto>
                     			<p><a href="#" data-toggle="modal" data-target="#change_avatar"> Thay đổi ảnh</a></p>
                     			<!-- modal của sửa ảnh-->
                               <div class="modal fade" id="change_avatar" tabindex="-3" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
