@@ -16,7 +16,7 @@ class chapterSeeder extends Seeder
         Chapter::truncate();
         $subjects = Subject::all(); 
         foreach($subjects as $key =>$subject):
-        	for($i = 1; $i <= 6; $i++):
+        	for($i = 1; $i <= 4; $i++):
         		Chapter::create([
         			'name' => 'Chương '.$i,
         			'subject_id' => $subject->id,
