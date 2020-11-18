@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\user;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
@@ -94,7 +95,7 @@ class ExamController extends Controller
         endforeach;
         $questions = Question::whereIn('id', $all_question_id)->get();
         $testexam = TestExam::find($history->testexam_id);
-        \Mail::to($userMail)->send(new \App\Mail\ResultMail($history, $questions, $testexam));
+        Mail::to($userMail)->send(new \App\Mail\ResultMail($history, $questions, $testexam));
 
         return redirect()->back()->with('success', 'Kết quả đã gửi đếm email của bạn.');
     }
