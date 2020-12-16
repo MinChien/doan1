@@ -37,7 +37,13 @@ Route::group(['prefix' => 'exam', 'namespace' => 'user'], function(){
 	Route::get('/result/detail/{id}/send_mail', 'ExamController@send_mail');
 	Route::get('/result/detail/{id}', 'ExamController@result_detail');
 });
-
+Route::group(['prefix' => 'chat', 'namespace' => 'user'], function () {
+	Route::get('/', 'ChatController@index');
+	Route::get('/contacts', 'ChatController@getContacts');
+	Route::get('/get_unread', 'ChatController@get_unread');
+	Route::get('/conversation/{id}', 'ChatController@getConversation');
+	Route::post('/conversation/send',  'ChatController@send');
+});
 
 Route::group(['prefix' => 'admin','namespace' => 'admin'], function(){
 	Route::get('/login','AdminLoginController@login')->name('admin.login');

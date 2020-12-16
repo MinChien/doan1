@@ -1,12 +1,6 @@
 @extends('layouts.sidebar')
 
 @section('content.c')
-<style type="text/css">
-    a:hover {
-        text-decoration: underline;
-        color:#2E373E;
-    }
-</style>
     <div class="container mt-3" style="height: 400px; ">
         <div class="row justify-content-left">
             <div class="col-md-6">

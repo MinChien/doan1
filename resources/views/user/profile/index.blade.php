@@ -1,12 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-<style type="text/css">
-    a:hover {
-        /*text-decoration: underline;*/
-        color:#2E373E;
-    }
-</style>
     <div class="container mt-3" style="height: 600px; ">
         <h1 class="text-center mb-5">Thông tin chung</h1>
         @error('avatar') 
@@ -82,23 +76,22 @@
                             <label class="font-weight-bolder">Địa chỉ: </label>
                             <input type="text" class="form-control" name="address" minlength="8" maxlength="80"  value="{{ $user->address }}">
                           </div>
-                          <input type="submit" name="submit" id='update' style="display: none">
-                          </form>
                           <!-- end form  -->
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-primary" id='btn_update'>Lưu</button>
+                          <button type="submit" class="btn btn-primary" id='btn_update'>Lưu</button>
+                          </form>
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <script type="text/javascript">
+                  <!-- <script type="text/javascript">
                     $("#btn_update").click(function(){
                       $("#update").click();
                     })
-                  </script>  
+                  </script>  --> 
             </div>
         </div>
         

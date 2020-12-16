@@ -117,8 +117,10 @@
         </div>
       </div>
     @include('inc.messages')   
-  
-    @yield('content')
+    <div id="app">
+        <chat-app :user="{{ Auth()->user() }}"></chat-app>
+    </div>  
+    
     <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -176,10 +178,10 @@
       </div>
     </footer>
     </div>
+    <script src="{{ url('/js/app.js') }}"></script>
      <script src="{{ url('/js/jquery-3.3.1.min.js') }}"></script> 
     <script src="{{ url('/js/jquery-migrate-3.0.0.js') }}"></script>
     <script src="{{ url('/js/popper.min.js') }}"></script>
-     <script src="{{ url('/js/bootstrap.min.js') }}"></script>
     <script src="{{ url('/js/owl.carousel.min.js') }}"></script>
      <script src="{{ url('/js/jquery.sticky.js') }}"></script>
     <script src="{{ url('/js/jquery.waypoints.min.js') }}"></script>
