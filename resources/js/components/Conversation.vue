@@ -33,6 +33,7 @@ export default {
                 contact_id: this.selectedContact.id,
                 text: text
             }).then(response => {
+                console.log(response.data);
                 this.$emit('newmessage', response.data);
             })
         },
