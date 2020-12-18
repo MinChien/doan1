@@ -72,7 +72,6 @@ return [
             'username' => isset($DATABASE_URL["user"]) ? $DATABASE_URL["user"] : null,
             'password' => isset($DATABASE_URL["pass"]) ? $DATABASE_URL["pass"] : null,
             'charset' => 'utf8',
-            "client_encoding"=> "utf8",
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
