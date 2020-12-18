@@ -101,3 +101,4 @@ Route::group(['prefix' => 'admin','namespace' => 'admin'], function(){
 });
 
 Route::get('/admin/test', 'TestController@checkcountdown');
+URL::forceScheme('https');
